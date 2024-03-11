@@ -7,4 +7,4 @@ require_once "App.php";
 // require_once "base/Model.php";
 // require_once "../controller/Controller.php";
 
-$app = new App();
+kickStart();

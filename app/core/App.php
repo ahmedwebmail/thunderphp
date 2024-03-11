@@ -5,11 +5,11 @@
  * The main application class responsible for routing and handling URL requests.
  */
 class App{
-	private  $controller = '';
-    private  $method     = 'index';
-    private  $params     = [];
-    private  $url;
-
+	private         $controller = '';
+    private         $method     = '';
+    private         $params     = [];
+    private         $url;
+    private static  $instance;
     /**
      * Constructor
      * Initializes the application by calling the getController method.
@@ -71,4 +71,22 @@ class App{
         	call_user_func_array( [ $this->controller, $this->method ], $this->params );
     	}
     }
+
+    /**
+     * This is the static method that controls the access to the singleton
+     * instance. On the first run, it creates a singleton object and places it
+     * into the static field. On subsequent runs, it returns the client existing
+     * object stored in the static field.
+     */
+
+    public static function getInstance(){
+        if( self::$instance == null){
+            self::$instance = new static();
+        }
+        return self::$instance;
+    }
+}
+
+function kickStart(){
+    App::getInstance();
 }
