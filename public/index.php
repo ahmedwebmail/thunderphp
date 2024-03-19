@@ -1,1 +1,1 @@
-index.php
+<h1>This is index</h1>
