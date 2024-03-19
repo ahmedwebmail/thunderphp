@@ -1,0 +1,19 @@
+{
+    "name": "ahmed/thunderphp",
+    "description": "Simple php custom framewrok",
+    
+    "authors": [
+        {
+            "name": "Ahmed Khaled",
+            "email": "csewebmail@gmail.com"
+        }
+    ],
+
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+    	"psr-4":{
+    		"App\\": "app/"
+    	}
+    }
+}
